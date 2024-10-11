@@ -1,8 +1,5 @@
 USE Companies;
 
-ALTER TABLE Stocks
-ALTER COLUMN [stock_name] NVARCHAR(max);  -- Adjust size as needed
-
 SELECT * FROM Stocks
 
 -- Top 5 stocks by market cap --
