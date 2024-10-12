@@ -1,7 +1,5 @@
 USE Companies;
 
-SELECT * FROM Stocks
-
 -- Top 5 stocks by market cap --
 SELECT TOP 5 * FROM Stocks 
 	ORDER BY [stock_market_cap_USD$_billion] DESC;
@@ -63,3 +61,13 @@ FROM
     RankedStocks
 WHERE 
     stock_rank <= 3; 
+
+-- Adding a new stock --
+INSERT INTO Stocks 
+    ([id], [stock_name], [stock_symbol], [stock_sector], [stock_industry], [stock_market], [stock_market_cap_USD$_billion], [country_of_origin], [country_code])
+VALUES 
+    (1, 'Central Cooperative Bank AD', 'CCB', 'Financial', 'Banking', 'Bulgarian Stock Exchange', 0.65, 'Bulgaria', 'BG');
+
+-- Select all stocks containing "Tech" in its name -- 
+SELECT [stock_name], [stock_symbol] FROM Stocks
+	WHERE [stock_name] LIKE '%Tech%';
